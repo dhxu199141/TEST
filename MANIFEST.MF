@@ -1,0 +1,10 @@
+Manifest-Version: 1.3.0_2012_04_03
+Ant-Version: Apache Ant 1.7.0
+Created-By: 1.5.0-b64 (Sun Microsystems Inc.)
+Built-On: 2012-04-03
+Main-Class: com.zjft.shepherd.rmi.RmiShepherdServer
+Class-Path: lib/mysql-connector-java-3.1.11-bin.jar lib/dom4j-1.6.1.ja
+ r   lib/ZjLog-1.1.0.jar  lib/proxool-0.9.0RC3.jar    lib/commons-logg
+ ing.jar  lib/jaxen-1.1-beta-7.jar    lib/classes12.jar  lib/db2jcc_li
+ cense_cu.jar   lib/db2jcc.jar lib/vtd-xml-2.3.jar   lib/sqljdbc.jar
+

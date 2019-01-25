@@ -1,0 +1,12 @@
+Manifest-Version: 1.4.3_20170606
+Ant-Version: Apache Ant 1.8.0RC1
+Created-By: 1.6.0_10-rc2-b32 (Sun Microsystems Inc.)
+Built-By: Administrator
+Built-On: 20170606
+Main-Class: com.zjft.shepherd.rmi.RmiShepherdServer
+Class-Path: lib/ZjLog-1.1.0.jar lib/ojdbc6.jar lib/commons-logging.
+ jar lib/db2jcc.jar lib/db2jcc_license_cu.jar lib/dom4j-1.6.1.jar lib/
+ javapasswordsdk.jar lib/jaxen-1.1-beta-7.jar lib/mysql-connector-java
+ -3.1.11-bin.jar lib/proxool-0.9.0RC3.jar lib/sqljdbc.jar lib/vtd-xml-
+ 2.3.jar 
+

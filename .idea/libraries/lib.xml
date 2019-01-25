@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/vtd-xml-2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/db2jcc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/db2jcc_license_cu.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sqljdbc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ZjLog-1.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxen-1.1-beta-7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/proxool-0.9.0RC3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-3.1.11-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javapasswordsdk.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/classes12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

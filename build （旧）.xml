@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<project name="rmi_all" default="dist" basedir="."> 
+
+	<property name="src" value="."/>
+  <property name="java.lib.dir" value="./lib" />	
+	<property name="build" value="classes"/>
+	<property name="dist" value="dist"/> 	    
+	<property name="code" value="./src"/> 	
+	<property name="MainClass" value="com.zjft.shepherd.rmi.RmiShepherdServer"/>
+	
+	<path id="compile.classpath">
+      <fileset dir="${java.lib.dir}"></fileset>
+    </path>
+	
+	<target name="init">	
+		<tstamp/>	
+		<mkdir dir="${build}"/>
+		<mkdir dir="${dist}"/>
+	</target>
+	  
+	<target name="compile" depends="init">
+
+		<javac srcdir="${src}" destdir="${build}" includeantruntime="on"  fork="yes"   >
+			<classpath refid="compile.classpath" />
+		</javac>
+		 <copy todir="${build}">
+			  <fileset dir="${code}">
+			    <exclude name="**/*.java"/>
+			  </fileset>
+			</copy>
+		
+	</target>	
+	
+	<target name="dist" depends="compile">
+<pathconvert property="mf.classpath" pathsep=" ">
+		    <mapper>
+		      <chainedmapper>
+		        <!-- remove absolute path -->
+		        <flattenmapper />
+		        <!-- add lib/ prefix -->
+		        <globmapper from="*" to="lib/*" />
+		      </chainedmapper>
+		    </mapper>
+		     <!-- lib.home contains all jar files, in several subdirectories -->
+		    <path refid="compile.classpath" />
+		</pathconvert>
+		<jar jarfile="${dist}/rmi.jar" >
+			<fileset dir="${build}" includes="com/**/*"/>
+			<manifest>
+				<attribute name="Manifest-Version" value="V1.3.7_${DSTAMP}"/>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Built-On" value="${DSTAMP}" />
+	        	<attribute name="Main-Class" value="${MainClass}"/>
+	        	<attribute name="Class-Path" value="${mf.classpath} "/>
+        	</manifest>
+      	</jar>
+      	<copy todir="${src}">
+		     <fileset dir="${dist}/" includes="rmi.jar"/>
+		</copy>					
+	</target>	
+</project>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="rmi">
+    <output-path>$PROJECT_DIR$/out/artifacts/</output-path>
+    <root id="archive" name="rmi.jar">
+      <element id="module-output" name="STD_RMI_V1.4.3" />
+    </root>
+  </artifact>
+</component>

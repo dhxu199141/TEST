@@ -1,0 +1,4 @@
+2017-11-27 17:24:45 [com.zjft.shepherd.common.SystemCons]-[INFO] 参数文件路径：./shepherd.properties
+2017-11-27 17:24:45 [com.zjft.shepherd.service.FileBegin]-[INFO] file service is runing on port:50004
+2017-11-27 17:31:20 [com.zjft.shepherd.common.SystemCons]-[INFO] 参数文件路径：./shepherd.properties
+2017-11-27 17:31:20 [com.zjft.shepherd.service.FileBegin]-[INFO] file service is runing on port:50004

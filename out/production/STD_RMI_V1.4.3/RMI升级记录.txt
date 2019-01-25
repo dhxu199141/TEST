@@ -1,0 +1,334 @@
+RMI升级记录
+
+======================================================================
+版本号1.0.4_20101008（2010/10/8）
+
+功能
+
+-针对北京银行的网络检测功能，控制报文中增加设备P端ip地址和端口节点
+
+版本号1.0.5_20101012（2010/10/12）
+
+关机和重启需要传递参数确定是立即执行还是应用执行
+
+2011-05-16 mod by ykliu
+除了交行，其他提取wsap电子统一为pdf格式。
+src/com/zjft/shepherd/business/control/ControlService.java
+
+2011-07-18 mod by ykliu
+处理文件名不能为中文的bug 
+/RMI_ALL/src/com/zjft/shepherd/business/control/ControlService.java
+
+--------------------------------------------2011-8-3修改记录  add by cy------------------------------------------
+1、增加星展银行 日立钞箱设置 的通信端口  开发  2011-8-3   add by cy
+    src/com/zjft/shepherd/rmi/RmiShepherdServerUtilImpl.java
+    src/com/zjft/shepherd/rmi/RmiShepherdServerUtil.java
+    language/rmi/ATTR_en_US.properties
+    language/rmi/ATTR_zh_CN.properties
+    language/rmi/ATTR_zh_TW.properties
+    src/com/zjft/shepherd/business/control/ControlService.java
+    src/com/zjft/shepherd/common/SystemLanguage.java
+    
+2、日立钞箱设置  增加操作结果插库操作  2011-8-8  mod by cy
+    src/com/zjft/shepherd/business/control/ControlService.java
+    
+------------------------------------------------------2011-9-6  add by cy ---------------------------------------------
+1、为星展银行增加对报文交易的MAC校验  2011-9-6  mod by cy
+     shepherd.properties
+     src/com/zjft/shepherd/common/EncryptUtil.java
+     src/com/zjft/shepherd/common/FileUtil.java
+     src/com/zjft/shepherd/common/SocketUtil.java
+     src/com/zjft/shepherd/common/SystemCons.java
+     src/com/zjft/shepherd/business/control/OsUsbControl.java
+     src/com/zjft/shepherd/business/control/OsRegeditControl.java
+     src/com/zjft/shepherd/business/control/ChangePwdControl.java
+     src/com/zjft/shepherd/business/control/MessageEncoded.java
+     src/com/zjft/shepherd/business/control/ControlService.java
+     src/com/zjft/shepherd/service/tcp/process/AgentFileChkProcess.java
+     src/com/zjft/shepherd/service/FileClient.java
+     src/com/zjft/shepherd/dao/DevInfoDAO.java;
+     ------------------------------------------------------2011-12-8  add by leiwu ---------------------------------------------
+     1、为汉口银行添加输出日志查询标识
+      src/com/zjft/shepherd/business/control/ControlServic.java
+      ------------------------------------------------------2011-12-21  add by leiwu ---------------------------------------------
+     1、去除汉口银行添加输出日志查询标识
+      src/com/zjft/shepherd/business/control/ControlServic.java
+      
+      ------------------------------------------------------2011-12-21  add by leiwu ---------------------------------------------
+      1.默认进行数据库连接测试
+      src/com/zjft/shepherd/common/DbConnectionNoContainer.java
+      
+      ------------------------------------------------------2012-04-03  add by qingwu ---------------------------------------------
+1.平安银行增加同步卡表远程控制命令
+	 src/com/zjft/shepherd/business/control/SyncCardControl.java
+	 src/com/zjft/shepherd/business/control/ControlService.java
+      ------------------------------------------------------2012-5-10  add by jimin ---------------------------------------------
+      1.修改为配置文件可设置路径(平安银行)
+      src/com/zjft/shepherd/common/SystemCons.java
+      src/com/zjft/shepherd/common/Log4JInit.java
+      src/com/zjft/shepherd/rmi/RmiShepherdServer.java
+      ------------------------------------------------------2012-08-21  add by qingwu ---------------------------------------------
+      1.平安银行V1.0.1代码同步
+		src/com/zjft/shepherd/common/FileUtil.java;
+		src/com/zjft/shepherd/business/control/ControlService.java;
+	------------------------------------------------------2012-11-12  add by qingwu ---------------------------------------------
+	1.增加批量处理操作
+	src/com/zjft/shepherd/business/control/ControlService.java
+	
+	------------------------------------------------------2013-01-29  add by cqluo ---------------------------------------------
+	1、ATM功能设定失败，远程控制结果两条记录问题
+------------------------------------------------V1.3.1版本封版add by cy------------------------------------------
+-----------------------------------------tag:RMI_V1_3_1_by_cy_20130422-----------------------------------------------------
+
+------------------------------------------------V1.3.2版本封版add by cy------------------------------------------
+1、增加昆仑银行复合卡磁条功能开启/关闭设置  0-关闭，1-开启
+     .project
+     .classpath
+     RMI升级记录.txt
+     language/rmi/ATTR_zh_CN.properties
+     src/com/zjft/shepherd/business/control/ControlService.java
+     src/com/zjft/shepherd/common/SystemLanguage.java
+     src/com/zjft/shepherd/rmi/RmiShepherdServerUtil.java
+     src/com/zjft/shepherd/rmi/RmiShepherdServerUtilImpl.java
+     src/com/zjft/shepherd/business/control/SyncParamControl.java  //没做改动，仅仅是同步配置项变更表
+     src/com/zjft/shepherd/common/SocketUtil.java
+     
+     ------------------------------------------------ 2013-05-11 add by cqluo ------------------------------------------
+     1、更新远程控制结果
+     src/com/zjft/shepherd/business/control/ControlService.java
+     ------------------------------------------------ 2013-06-24 add by qingwu ------------------------------------------
+     1.解决远程下载无扩展名文件失败问题
+     src/com/zjft/shepherd/business/control/ControlService.java
+     
+      ------------------------------------------------ 2013-08-13 add by cqluo ------------------------------------------
+     1、文件下载改造
+    src/com/zjft/shepherd/business/control/ControlService.java
+    src/com/zjft/shepherd/common/ResumeFileUtil.java
+    src/com/zjft/shepherd/common/SocketUtil.java
+    src/com/zjft/shepherd/common/SystemCons.java
+    src/com/zjft/shepherd/dao/RemoteControlDAO.java
+    src/com/zjft/shepherd/dao/RemoteFileDownInfo.java
+    src/com/zjft/shepherd/dao/RemoteTrace.java
+     
+     
+    ------------------------------------------------ 2013-08-23 add by cqluo V1.3.4------------------------------------------
+    1、复合卡状态查询
+    src/com/zjft/shepherd/business/control/ControlService.java
+    src/com/zjft/shepherd/rmi/RmiShepherdServerUtilImpl.java
+	src/com/zjft/shepherd/rmi/RmiShepherdServerUtil.java
+	
+  
+  ------------------------------------------------ 2013-10-17 add by cqluo v1.3.5开始------------------------------------------
+	1、文件下载改造
+	src/com/zjft/shepherd/common/ResumeFileUtil.java
+	src/com/zjft/shepherd/common/SocketUtil.java
+	
+	
+	2、平安银行获取数据库密码配置修改
+	lib/javapasswordsdk.jar
+    shepherd.properties
+    src/com/zjft/shepherd/common/DbConnection.java
+    src/com/zjft/shepherd/common/SystemCons.java
+    src/com/zjft/shepherd/common/cyberark/CybAccount.java
+    src/com/zjft/shepherd/common/cyberark/CyberArkUtil.java
+    src/com/zjft/shepherd/common/cyberark/ProperFile.java
+    
+    3、文件上传
+    shepherd.properties
+    src/com/zjft/shepherd/common/SocketUtil.java
+    src/com/zjft/shepherd/common/SystemCons.java
+    src/com/zjft/shepherd/service/FileClient.java
+    
+    4、文件上传缓存大小改变
+    src/com/zjft/shepherd/common/SystemCons.java
+    
+    5、文件下载上传缓存大小改造
+    shepherd.properties
+    src/com/zjft/shepherd/common/SocketUtil.java
+    src/com/zjft/shepherd/common/SystemCons.java
+    src/com/zjft/shepherd/service/FileClient.java
+    
+  
+   ------------------------------------------------ 2014-01-09 add by qfxu v1.3.6------------------------------------------
+	1、添加国际化内容
+	language/rmi/ATTR_en_US.properties
+	language/rmi/ATTR_zh_CN.properties
+	language/rmi/ATTR_zh_TW.properties
+	
+	2、修改加载系统参数的路径
+	src/com/zjft/shepherd/common/SystemCons.java
+	src/com/zjft/shepherd/rmi/RmiShepherdServer.java
+	
+	3、开启/关闭现金缓存、开启/关闭冠字号缓存
+	src/com/zjft/shepherd/business/control/BufferMemoryControl.java
+	src/com/zjft/shepherd/business/control/ControlService.java
+	src/com/zjft/shepherd/common/SystemLanguage.java
+	src/com/zjft/shepherd/dao/RemoteControlDAO.java
+	
+	4、整合rmi、rvc、xml、log、shepherd在一个文件中
+	shepherd.properties
+	
+	
+   ------------------------------------------------ 2014-02-08 add by qfxu v1.3.7------------------------------------------
+	1、添加国际化内容
+	language/rmi/ATTR_en_US.properties
+	language/rmi/ATTR_zh_CN.properties
+	language/rmi/ATTR_zh_TW.properties
+	
+	2、开启/关闭存款冠字号凭条打印、开启/关闭取款冠字号凭条打印
+	src/com/zjft/shepherd/business/control/NtsReceiptPrintControl.java
+	src/com/zjft/shepherd/business/control/ControlService.java
+	src/com/zjft/shepherd/common/SystemLanguage.java
+	src/com/zjft/shepherd/dao/RemoteControlDAO.java
+	
+	3、根据设备号获取某台设备的日志路径
+	src/com/zjft/shepherd/dao/DevInfoDAO.java
+	
+	4、添加脚本
+	数据库兼容性升级(仅供参考).sql
+	
+	
+	 ------------------------------------------------ 2014-06-20 add by cqluo v1.3.9------------------------------------------
+	1、存款ID功能
+	src/com/zjft/shepherd/business/control/DepositIdInfo.java
+    src/com/zjft/shepherd/business/control/DocumentFileList.java
+    src/com/zjft/shepherd/business/control/MessageEncoded.java
+    src/com/zjft/shepherd/business/control/RemoteControlTool.java
+    src/com/zjft/shepherd/common/SystemCons.java
+    src/com/zjft/shepherd/common/SystemLanguage.java
+    src/com/zjft/shepherd/rmi/RmiShepherdServerUtil.java
+    src/com/zjft/shepherd/rmi/RmiShepherdServerUtilImpl.java
+    src/com/zjft/shepherd/service/DepositIdFactory.java
+    src/com/zjft/shepherd/service/DepositIdService.java
+    src/com/zjft/shepherd/service/impl
+    src/com/zjft/shepherd/service/impl/DepositIdServiceImpl.java
+    language/rmi/ATTR_en_US.properties
+    language/rmi/ATTR_zh_CN.properties
+    language/rmi/ATTR_zh_TW.properties
+    src/com/zjft/shepherd/business/control/ControlService.java
+    src/com/zjft/shepherd/service/impl/DepositIdServiceImpl.java
+    
+     ------------------------------------------------ 2014-08-08 add by cqluo v1.3.9------------------------------------------
+    1、设置存款ID时安全控制，设置前发送逻辑关命令，设置成功后发送逻辑开命令
+    src/com/zjft/shepherd/service/DepositIdFactory.java
+    src/com/zjft/shepherd/service/DepositIdService.java
+    src/com/zjft/shepherd/service/impl/DepositIdServiceImpl.java
+    src/com/zjft/shepherd/command/RMICommand.java
+    src/com/zjft/shepherd/command/RMICommand200045.java
+    src/com/zjft/shepherd/command/RMICommand200046.java
+    src/com/zjft/shepherd/command/RMICommandFactory.java
+    src/com/zjft/shepherd/command/RMICommandFactory200045.java
+    src/com/zjft/shepherd/command/RMICommandFactory200046.java
+    src/com/zjft/shepherd/request/RMIRequest.java
+    src/com/zjft/shepherd/request/RMIRequest200046.java
+    
+    
+    ------------------------------------------------ 2014-09-01 add by cqluo v1.4.0------------------------------------------
+    1、文件下载速度限制
+    src/com/zjft/shepherd/dao/DevInfoDAO.java
+    src/com/zjft/shepherd/service/FileClient.java
+    src/com/zjft/shepherd/common/ResumeFileUtil.java
+	数据库兼容性升级(仅供参考).sql
+    ------------------------------------------------ v1.4.0 end--------------------------------------------------------------
+    
+    ------------------------------------------------ 2016-02-29 add by guoyuanyuan v1.4.1------------------------------------
+    1、远程钞票精查
+    src\com\zjft\shepherd\dao\RemoteCountResultInfo.java
+    src\com\zjft\shepherd\business\control\ControlService.java
+    src\com\zjft\shepherd\dao\RemoteControlDAO.java
+    src\com\zjft\shepherd\dao\RemoteTrace.java
+    src\com\zjft\shepherd\rmi\RmiShepherdServerUtil.java
+    src\com\zjft\shepherd\rmi\RmiShepherdServerUtilImpl.java
+  
+    2、ATMVIP配置分离
+    src\com\zjft\shepherd\common\ResumeFileUtil.java
+    src\com\zjft\shepherd\common\SocketUtil.java
+    src\com\zjft\shepherd\common\StringUtil.java
+    src\com\zjft\shepherd\common\SystemCons.java
+  
+    3、获取传输包大小BUG修复
+    src\com\zjft\shepherd\service\FileClient.java
+  
+    4、空报文处理优化
+    src\com\zjft\shepherd\common\SocketUtil.java
+
+    5、其他
+    src\RMI升级记录.txt
+    build.xml
+    shepherd.properties
+          数据库兼容性升级(仅供参考).sql
+    ------------------------------------------------ v1.4.1 end--------------------------------------------------------------
+
+    ------------------------------------------------ 2016-06-29 add by zhangdd v1.4.2------------------------------------
+    1、修复远程控制记录入库失败的问题
+    src/com/zjft/shepherd/business/control/ChangePwdControl.java
+	src/com/zjft/shepherd/business/control/OsRegeditControl.java
+	src/com/zjft/shepherd/business/control/OsUsbControl.java
+	src/com/zjft/shepherd/business/control/SyncCardControl.java
+	src/com/zjft/shepherd/business/control/SyncParamControl.java
+	
+	 ------------------------------------------------ 2016-08-18 add by zhangdd v1.4.2------------------------------------
+    1、线程池并发处理批量远程控制请求
+    src/com/zjft/shepherd/business/control/ControlServiceImpl.java
+    src/com/zjft/shepherd/common/SystemCons.java
+    src/com/zjft/shepherd/business/control/ControlService.java
+    shepherd.properties
+	src/com/zjft/shepherd/process/PausableThreadPoolExecutor.java
+	src/com/zjft/shepherd/process/ThreadPoolClient.java
+    
+    2、优化推送功能
+    src/com/zjft/shepherd/common/SystemCons.java
+    src/com/zjft/shepherd/common/ResumeFileUtil.java
+    shepherd.properties
+    
+     ------------------------------------------------ 2016-09-07 add by limengv1.4.2------------------------------------
+     1.atmv日志一键提取的设备端日志提取
+     src/com/zjft/shepherd/business/control/ControlService.java
+     src/com/zjft/shepherd/rmi/RmiShepherdServerUtil.java
+     src/com/zjft/shepherd/rmi/RmiShepherdServerUtilImpl.java
+     src/com/zjft/shepherd/vo/DevBaseInfo.java
+     src/com/zjft/shepherd/dao/AtmvLogDAO.java
+     src/com/zjft/shepherd/dao/AtmvLogPathInfo.java
+     src/com/zjft/shepherd/dao/DevInfoDAO.java
+
+     ------------------------------------------------ 2016-09-22 add by zhichenv1.4.2------------------------------------
+     1.jsp远程控制结果查询问题修复
+     src/com/zjft/shepherd/business/control/ControlService.java
+ 
+     ------------------------------------------------ 2016-09-22 add by zhangdd v1.4.2------------------------------------
+    1、获取设备端流水文件信息
+    src/com/zjft/shepherd/rmi/RmiShepherdServerUtilImpl.java
+    src/com/zjft/shepherd/rmi/RmiShepherdServerUtil.java
+    src/com/zjft/shepherd/business/control/CheckJounalService.java
+    src/com/zjft/shepherd/business/control/ControlService.java
+    
+    ------------------------------------------------ 2016-11-21 add by zhangdd v1.4.2 beta1------------------------------------
+    1、提取电子日志：修改配置文件中的日志路径配置项不生效的为问题，并且支持文件名可包含设备号或日期
+    src/com/zjft/shepherd/common/SystemCons.java
+    src/com/zjft/shepherd/business/control/ControlService.java
+    src/com/zjft/shepherd/business/control/AtmLogRule.java
+    shepherd.properties
+    
+    2、删除C端返回的报文内容打印
+    src/com/zjft/shepherd/common/SocketUtil.java
+    
+    3、修改测试问题
+    src/com/zjft/shepherd/service/FileClient.java
+    src/com/zjft/shepherd/common/ResumeFileUtil.java
+    src/com/zjft/shepherd/business/control/ControlService.java
+    
+         ------------------------------------------------ 2017-04-14 add by zhangdd v1.4.3------------------------------------
+    1、支持C端新架构
+    shepherd.properties                                       
+	src/com/zjft/shepherd/business/control/AtmLogRule.java    
+	src/com/zjft/shepherd/business/control/ControlService.java
+	src/com/zjft/shepherd/common/SystemCons.java              
+	src/com/zjft/shepherd/dao/DevInfoDAO.java
+
+         ------------------------------------------------ 2017-11-28 add by sjxu v1.4.3------------------------------------
+         com.zjft.shepherd.common.SocketUtil
+         //修改成debug
+         com.zjft.shepherd.service.FileClient
+         //修改成debug
+         com.zjft.shepherd.common.DbConnection
+         //取消pool.setDelegateProperties
